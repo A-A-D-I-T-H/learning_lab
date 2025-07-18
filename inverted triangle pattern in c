@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPalindrome(int x) {
+    if (x < 0) return false;
+
+    long long rev = 0;
+    int temp = x;
+
+    while (x != 0) {
+        int digit = x % 10;
+        rev = rev * 10 + digit;
+        x /= 10;
+    }
+
+    return rev == temp;
+}
+
+int main() {
+    int x = 998765432; // You can test with 1534236469 too
+
+    if (isPalindrome(x)) {
+        printf("Output: true\n");
+    } else {
+        printf("Output: false\n");
+    }
+
+    return 0;
+}

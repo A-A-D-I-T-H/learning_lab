@@ -1,0 +1,25 @@
+#include <stdio.h> 
+
+int main() { 
+    int n; 
+    int rev = 0; 
+    int digit;
+
+    printf("Enter a number: "); 
+    scanf("%d", &n); 
+
+    
+    if (n == 0) {
+        rev = 0; 
+    } else { 
+        while (n != 0) { 
+            digit = n % 10; 
+            rev = rev*10+digit; 
+            n /= 10; 
+        }
+    }
+
+    printf("Product of digits = %d\n", rev); 
+
+    return 0; 
+}
